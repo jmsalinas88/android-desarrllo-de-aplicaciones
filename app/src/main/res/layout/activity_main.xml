@@ -14,11 +14,12 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/nombreCompleto"/>
+            android:hint="@string/nombreCompleto"
+            android:id="@+id/textNombre"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <EditText
-        android:id="@+id/editText1"
+        android:id="@+id/textFxNacimiento"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/fxNacimiento" />
@@ -29,7 +30,8 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/telefono"/>
+            android:hint="@string/telefono"
+            android:id="@+id/textTelefono"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -38,7 +40,8 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/email"/>
+            android:hint="@string/email"
+            android:id="@+id/textEmail"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -47,7 +50,8 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/descContacto"/>
+            android:hint="@string/descContacto"
+            android:id="@+id/textDescContacto"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button

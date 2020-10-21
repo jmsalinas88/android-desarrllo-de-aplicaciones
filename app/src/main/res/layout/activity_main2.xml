@@ -11,9 +11,10 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Confirmar Datos"
+        android:text="@string/tituloEditarDatos"
         android:gravity="center"
-        android:textStyle="bold">
+        android:textStyle="bold"
+        android:textSize="@dimen/tituloConfirmDatos">
     </TextView>
 
     <LinearLayout
@@ -29,6 +30,7 @@
         </TextView>
 
         <TextView
+            android:id="@+id/tvNombreEdit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Data"></TextView>
@@ -48,6 +50,7 @@
         </TextView>
 
         <TextView
+            android:id="@+id/tvFxNacimientoEdit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Data"></TextView>
@@ -67,6 +70,7 @@
         </TextView>
 
         <TextView
+            android:id="@+id/tvTelefonoEdit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Data"></TextView>
@@ -86,6 +90,7 @@
         </TextView>
 
         <TextView
+            android:id="@+id/tvEmailEdit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Data"></TextView>
@@ -105,6 +110,7 @@
         </TextView>
 
         <TextView
+            android:id="@+id/tvDescContactoEdit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Data"></TextView>
@@ -112,7 +118,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/miBotonSiguiente"
+        android:id="@+id/miBotonEditDatos"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/miBotonEditarDatos"
