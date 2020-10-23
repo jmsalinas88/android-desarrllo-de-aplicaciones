@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">Petagram</string>
+    <string name="miBotonSiguiente">SIGUIENTE</string>
+    <string name="miBotonEditarDatos">EDITAR DATOS</string>
+    <string name="descContacto">Descripción Contacto:</string>
+    <string name="email">Email:</string>
+    <string name="telefono">Telefono:</string>
+    <string name="fxNacimiento">Fecha Nacimiento:</string>
+    <string name="nombreCompleto">Nombre Completo:</string>
+    <string name="tituloEditarDatos">Confirmar Datos</string>
+    <string name="NOMBRE">NOMBRE</string>
+    <string name="FXNACIMIENTO">FXNACIMIENTO</string>
+    <string name="TELEFONO">TELEFONO</string>
+    <string name="EMAIL">EMAIL</string>
+    <string name="DESC_CONTACTO">DESC_CONTACTO</string>
 </resources>
