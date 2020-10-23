@@ -34,19 +34,6 @@ public class MainActivity extends AppCompatActivity {
         textDescContacto =(TextInputEditText) findViewById(R.id.textDescContacto);
         miBotonSiguiente =(Button) findViewById(R.id.miBotonSiguiente);
 
-        Bundle parametros = savedInstanceState;
-        String nombre = parametros.getString(getResources().getString(R.string.NOMBRE));
-        String fxNacimiento = parametros.getString(getResources().getString(R.string.FXNACIMIENTO));
-        String telefono = parametros.getString(getResources().getString(R.string.TELEFONO));
-        String email = parametros.getString(getResources().getString(R.string.EMAIL));
-        String descContacto = parametros.getString(getResources().getString(R.string.DESC_CONTACTO));
-
-        textNombre.setText(nombre);
-        textFechaNacimiento.setText(fxNacimiento);
-        textTelefono.setText(telefono);
-        textEmail.setText(email);
-        textDescContacto.setText(descContacto);
-
         textFechaNacimiento.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -71,6 +58,32 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        textFechaNacimiento.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if(hasFocus){
+                    final Calendar cldr = Calendar.getInstance();
+                    int day = cldr.get(Calendar.DAY_OF_MONTH);
+                    int month = cldr.get(Calendar.MONTH) + 1;
+                    int year = cldr.get(Calendar.YEAR);
+                    datePickerFechaNacimiento = new DatePickerDialog(MainActivity.this,
+                            new DatePickerDialog.OnDateSetListener() {
+                                @Override
+                                public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                                    String dateStr = "";
+                                    if(dayOfMonth < 10){
+                                        dateStr = "0" + dayOfMonth + "/" + monthOfYear + "/" + year;
+                                    }else{
+                                        dateStr = dayOfMonth + "/" + monthOfYear + "/" + year;
+                                    }
+                                    textFechaNacimiento.setText(dateStr);
+                                }
+                            }, year, month, day);
+                    datePickerFechaNacimiento.show();
+                }
+            }
+        });
+
         miBotonSiguiente.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -84,5 +97,26 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
         });
+    }
+
+    @Override
+    protected void onResume() {
+
+        super.onResume();
+
+        Bundle parametros = getIntent().getExtras();
+        if(parametros != null){
+            String nombre = parametros.getString(getResources().getString(R.string.NOMBRE));
+            String fxNacimiento = parametros.getString(getResources().getString(R.string.FXNACIMIENTO));
+            String telefono = parametros.getString(getResources().getString(R.string.TELEFONO));
+            String email = parametros.getString(getResources().getString(R.string.EMAIL));
+            String descContacto = parametros.getString(getResources().getString(R.string.DESC_CONTACTO));
+
+            textNombre.setText(nombre);
+            textFechaNacimiento.setText(fxNacimiento);
+            textTelefono.setText(telefono);
+            textEmail.setText(email);
+            textDescContacto.setText(descContacto);
+        }
     }
 }
